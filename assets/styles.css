@@ -564,4 +564,13 @@ h3 {
     justify-content: center;
     text-align: center;
   }
+
+  .wheel-photo { 
+    max-width: 320px; 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+  }
+
 }
