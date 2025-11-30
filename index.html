@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Georgia Gravel Routes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="eyebrow">GeorgiaGravel.com</p>
+      <h1>Discover Gravel Cycling in Georgia</h1>
+      <p class="lead">Curated gravel routes with quick links to Ride with GPS, Strava, and Garmin. Each route includes a snapshot from Google Maps, difficulty insights, and local flavor so you can roll out with confidence.</p>
+      <div class="tag-strip">
+        <span>Ride with GPS</span>
+        <span>Strava</span>
+        <span>Garmin</span>
+        <span>Local beta</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <div>
+        <h2>Gravel, Georgia style</h2>
+        <p>Georgia’s gravel spans Blue Ridge climbs, Piedmont pine forests, and coastal sand roads. These handpicked routes include surface notes, suggested tire sizes, and route files so you can ride them on your preferred platform.</p>
+      </div>
+      <div class="filters">
+        <label class="filter">
+          <span>Difficulty</span>
+          <select id="difficultyFilter">
+            <option value="all">All</option>
+            <option value="easy">Easy</option>
+            <option value="moderate">Moderate</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+        <label class="filter">
+          <span>Region</span>
+          <select id="regionFilter">
+            <option value="all">All</option>
+            <option value="north">North Georgia</option>
+            <option value="central">Central</option>
+            <option value="coastal">Coastal</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="routes" id="routeGrid" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    <p>Made for riders who love red clay, river valleys, and ridge lines. Always verify road closures and seasonal hunting schedules before you roll.</p>
+  </footer>
+
+  <template id="routeCardTemplate">
+    <article class="route-card">
+      <div class="route-card__image-wrap">
+        <img class="route-card__image" alt="" loading="lazy">
+        <span class="badge" data-badge></span>
+      </div>
+      <div class="route-card__body">
+        <div class="route-card__heading">
+          <div>
+            <p class="route-card__region" data-region></p>
+            <h3 data-title></h3>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Miles</span>
+            <span class="stat__value" data-miles></span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">Climbing</span>
+            <span class="stat__value" data-elevation></span>
+          </div>
+        </div>
+        <p class="route-card__description" data-description></p>
+        <ul class="tags" data-surfaces></ul>
+        <div class="link-grid">
+          <a class="pill" data-rwgps target="_blank" rel="noopener">Ride with GPS</a>
+          <a class="pill" data-strava target="_blank" rel="noopener">Strava</a>
+          <a class="pill" data-garmin target="_blank" rel="noopener">Garmin</a>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="assets/js/routes.js"></script>
+</body>
+</html>
