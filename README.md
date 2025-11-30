@@ -1,5 +1,7 @@
-# GeorgiaGravel.com
+# georgiagravel
 
-Static single-page site that highlights handpicked gravel cycling routes across Georgia, USA. Each card includes difficulty, surfaces, quick links for Ride with GPS/Strava/Garmin, and a Google Maps snapshot of the area.
+Static website for Georgiagravel.com showcasing curated gravel cycling routes across Georgia, USA. The landing page lists distances, elevation, estimated ride time, difficulty ratings, navigation links (RideWithGPS, Strava, Garmin), and embedded Google Maps views for each featured loop.
 
-Open `index.html` in a browser to explore the curated routes and use the built-in filters for difficulty and region.
+## Developing
+
+Open `index.html` in a browser or serve the folder with any static server (for example: `python -m http.server 8000`) to view the page locally.
