@@ -44,28 +44,6 @@ window.routes = [
     embedTitle: 'Mulberry Gap Back 40 map'
   },
   {
-    slug: 'oconee-pine-and-clay',
-    region: 'Oconee National Forest',
-    title: 'Oconee Pine & Clay',
-    date: '2024-06-10',
-    difficulty: 'Moderate',
-    summary: 'Fast red clay and pine-lined roads near Lake Oconee with long straightaways, light vehicle traffic, and plenty of bailout options.',
-    stats: {
-      distance: '38 mi / 61 km',
-      elevation: '1,900 ft / 579 m',
-      rideTime: '2.5–3.5 hrs'
-    },
-    links: {
-      rideWithGps: 'https://ridewithgps.com/routes/36488620',
-      strava: 'https://www.strava.com/routes/3080853450339908158',
-      garmin: 'https://connect.garmin.com/modern/course/132074611',
-      gpx: '/assets/gpx/placeholder.gpx'
-    },
-    creditHtml: 'Courtesy of friends of Oconee National Forest (full attribution coming soon)',
-    embedUrl: 'https://www.google.com/maps?q=Greensboro%2C%20GA&output=embed',
-    embedTitle: 'Oconee Pine & Clay map'
-  },
-  {
     slug: 'augusta-canal',
     region: 'Savannah River',
     title: 'Augusta Canal',
