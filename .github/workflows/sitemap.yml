@@ -2,7 +2,10 @@ name: Generate sitemap.xml
 
 on:
   push:
-    branches: [ main ]  # change if your default branch is different
+    branches: [ main ]
+
+permissions:
+  contents: write   # <-- this is the important bit
 
 jobs:
   sitemap_job:
@@ -19,8 +22,7 @@ jobs:
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: https://georgiagravel.com/
-          # If your site HTML is in a folder (e.g. docs/), uncomment:
-          # path-to-root: docs
+          # path-to-root: docs   # uncomment if your site root is in /docs or similar
 
       - name: Commit updated sitemap
         run: |
@@ -34,7 +36,6 @@ jobs:
 
           git add "$sitemap_path"
 
-          # Only commit if there are real changes
           if git diff --cached --quiet; then
             echo "No changes to $sitemap_path"
             exit 0
@@ -42,5 +43,3 @@ jobs:
 
           git commit -m "Update sitemap [skip ci]"
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
