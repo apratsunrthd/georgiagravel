@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Gravel Routes | Georgia Gravel</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero hero--subpage">
+    <div class="hero__content">
+      <div class="top-nav">
+        <div class="top-nav__logo">Georgia Gravel</div>
+        <div class="top-nav__links">
+          <a href="index.html">Home</a>
+          <a class="top-nav__active" href="routes.html">All routes</a>
+          <a href="reviews.html">Product reviews</a>
+          <a href="https://tngraveldad.substack.com/" target="_blank" rel="noopener">Substack</a>
+        </div>
+      </div>
+      <p class="eyebrow">Route library</p>
+      <h1>All gravel routes</h1>
+      <p class="lede">Browse every curated Georgia gravel loop. Each card includes quick stats, navigation links, and a preview map so you can jump straight into planning.</p>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="routes-table">
+      <div class="routes-table__header">
+        <div>
+          <p class="eyebrow">Compare routes</p>
+          <h2>Sort by distance, elevation, difficulty, or region</h2>
+          <p class="routes-table__lede">Use the sortable headers to quickly find a route that matches your training goals or weekend plans.</p>
+        </div>
+      </div>
+      <div class="routes-table__wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Route</th>
+              <th scope="col" data-sort-key="distance">Distance</th>
+              <th scope="col" data-sort-key="elevation">Elevation</th>
+              <th scope="col" data-sort-key="difficulty">Difficulty</th>
+              <th scope="col" data-sort-key="region">Region</th>
+            </tr>
+          </thead>
+          <tbody data-routes-table-body>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="route-grid" id="all-routes-grid">
+      <noscript>
+        <p>Enable JavaScript to view the full route previews.</p>
+      </noscript>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Gravel-ready routes across Georgia &middot; <a href="routes.html">View every route</a></p>
+  </footer>
+  <script src="assets/data/routes.js"></script>
+  <script src="assets/js/render-routes.js"></script>
+  <script src="assets/js/routes-table.js"></script>
+  <script>
+    const allRoutesGrid = document.getElementById('all-routes-grid');
+    if (allRoutesGrid && window.routeComponents && Array.isArray(window.routes)) {
+      const newestFirst = [...window.routes].sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+      );
+      newestFirst.forEach((route) => {
+        allRoutesGrid.appendChild(window.routeComponents.createRouteCard(route));
+      });
+    }
+  </script>
+</body>
+</html>

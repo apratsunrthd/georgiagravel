@@ -209,6 +209,98 @@ h3 {
   gap: 24px;
 }
 
+.routes-table {
+  margin-top: 48px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(237, 137, 54, 0.08), rgba(255, 255, 255, 0.02));
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.routes-table__header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.routes-table__lede {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.routes-table__wrapper {
+  overflow-x: auto;
+}
+
+.routes-table table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.routes-table th,
+.routes-table td {
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.routes-table thead {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.routes-table tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.routes-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.routes-table th {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.routes-table th:first-child {
+  cursor: default;
+}
+
+.routes-table th[data-sort-key]::after {
+  content: '↕';
+  margin-left: 8px;
+  font-size: 11px;
+  opacity: 0.6;
+}
+
+.routes-table th[data-sort-direction='asc']::after {
+  content: '↑';
+  opacity: 1;
+}
+
+.routes-table th[data-sort-direction='desc']::after {
+  content: '↓';
+  opacity: 1;
+}
+
+.routes-table td {
+  border-top: 1px solid var(--border);
+}
+
+.routes-table a {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.routes-table a:hover {
+  text-decoration: underline;
+}
+
 .route-card {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
