@@ -40,7 +40,11 @@
 
       const titleCell = document.createElement('td');
       const titleLink = document.createElement('a');
-      titleLink.href = `routes/${route.slug}.html`;
+      const detailHref = window.location.pathname.includes('/routes/')
+        ? `../route.html?slug=${encodeURIComponent(route.slug)}`
+        : `route.html?slug=${encodeURIComponent(route.slug)}`;
+
+      titleLink.href = detailHref;
       titleLink.textContent = route.title;
       titleCell.appendChild(titleLink);
 

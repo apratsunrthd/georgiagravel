@@ -59,8 +59,8 @@
     eyebrow.className = 'eyebrow';
     eyebrow.textContent = route.region;
 
-    const isRoutesPage = window.location.pathname.includes('/routes/');
-    const detailHref = isRoutesPage ? `${route.slug}.html` : `routes/${route.slug}.html`;
+    const isNestedPage = window.location.pathname.includes('/routes/');
+    const detailHref = `${isNestedPage ? '../' : ''}route.html?slug=${encodeURIComponent(route.slug)}`;
 
     const titleLink = document.createElement('a');
     titleLink.className = 'route-card__title-link';
