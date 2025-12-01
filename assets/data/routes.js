@@ -44,47 +44,25 @@ window.routes = [
     embedTitle: 'Mulberry Gap Back 40 map'
   },
   {
-    slug: 'oconee-pine-and-clay',
-    region: 'Oconee National Forest',
-    title: 'Oconee Pine & Clay',
-    date: '2024-06-10',
-    difficulty: 'Moderate',
-    summary: 'Fast red clay and pine-lined roads near Lake Oconee with long straightaways, light vehicle traffic, and plenty of bailout options.',
-    stats: {
-      distance: '38 mi / 61 km',
-      elevation: '1,900 ft / 579 m',
-      rideTime: '2.5–3.5 hrs'
-    },
-    links: {
-      rideWithGps: 'https://ridewithgps.com/routes/36488620',
-      strava: 'https://www.strava.com/routes/3080853450339908158',
-      garmin: 'https://connect.garmin.com/modern/course/132074611',
-      gpx: '/assets/gpx/placeholder.gpx'
-    },
-    creditHtml: 'Courtesy of friends of Oconee National Forest (full attribution coming soon)',
-    embedUrl: 'https://www.google.com/maps?q=Greensboro%2C%20GA&output=embed',
-    embedTitle: 'Oconee Pine & Clay map'
-  },
-  {
-    slug: 'canal-and-levee-cruise',
+    slug: 'augusta-canal',
     region: 'Savannah River',
-    title: 'Canal & Levee Cruise',
+    title: 'Augusta Canal',
     date: '2024-06-05',
     difficulty: 'Friendly',
-    summary: 'Waterfront gravel along the Augusta Canal and river levee with broad views, minimal climbing, and easy access from downtown trailheads.',
+    summary: 'A mellow spin along the Augusta Canal towpath with calm water, shaded gravel, and easy pedaling. You\’ll roll past old mills, quiet river views, and long stretches of smooth doubletrack with almost no climbing. A chill, scenic out-and-back that\’s perfect for an easy day or a warmup ride in Augusta.',
     stats: {
-      distance: '18 mi / 29 km',
-      elevation: '650 ft / 198 m',
+      distance: '15 mi / 24 km',
+      elevation: '247 ft / 75 m',
       rideTime: '1.5 hrs'
     },
     links: {
-      rideWithGps: 'https://ridewithgps.com/routes/40381045',
-      strava: 'https://www.strava.com/routes/3134382276134727300',
-      garmin: 'https://connect.garmin.com/modern/course/137443801',
-      gpx: '/assets/gpx/placeholder.gpx'
+      rideWithGps: 'https://ridewithgps.com/routes/48016836',
+      strava: 'https://www.strava.com/routes/3430667873865431794',
+      garmin: 'https://connect.garmin.com/modern/course/420313935',
+      gpx: '/assets/gpx/Augusta_Canal.gpx'
     },
-    creditHtml: 'Courtesy of the Augusta Canal trail stewards (full attribution coming soon)',
-    embedUrl: 'https://www.google.com/maps?q=Augusta%20Canal%2C%20Augusta%2C%20GA&output=embed',
-    embedTitle: 'Canal and Levee Cruise map'
+    creditHtml: 'Courtesy of <a href="https://ridewithgps.com/users/5568056" target="_blank" rel="noopener">WillyB</a> | <a href="https://augustacanal.com/trails/" target="_blank" rel="noopener">Augusta Canal Trails</a>',
+    embedUrl: 'https://ridewithgps.com/embeds?type=route&id=48016836&distanceMarkers=true',
+    embedTitle: 'Augusta Canal map'
   }
 ];
