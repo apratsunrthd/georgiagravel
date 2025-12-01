@@ -59,8 +59,17 @@
     eyebrow.className = 'eyebrow';
     eyebrow.textContent = route.region;
 
+    const isRoutesPage = window.location.pathname.includes('/routes/');
+    const detailHref = isRoutesPage ? `${route.slug}.html` : `routes/${route.slug}.html`;
+
+    const titleLink = document.createElement('a');
+    titleLink.className = 'route-card__title-link';
+    titleLink.href = detailHref;
+    titleLink.textContent = route.title;
+
     const title = document.createElement('h3');
-    title.textContent = route.title;
+    title.appendChild(titleLink);
+
     headerText.append(eyebrow, title);
 
     const badge = document.createElement('span');
@@ -78,10 +87,6 @@
     const links = document.createElement('div');
     links.className = 'route-card__links';
 
-    const isRoutesPage = window.location.pathname.includes('/routes/');
-    const detailHref = isRoutesPage ? `${route.slug}.html` : `routes/${route.slug}.html`;
-    const detailLink = buildLink({ href: detailHref, label: 'View route page' });
-
     const rideWithGpsLink = buildLink({ href: route.links?.rideWithGps, label: 'RideWithGPS' });
     const stravaLink = buildLink({ href: route.links?.strava, label: 'Strava' });
     const garminLink = buildLink({ href: route.links?.garmin, label: 'Garmin' });
@@ -92,7 +97,7 @@
       gpxLink.setAttribute('download', '');
     }
 
-    [detailLink, rideWithGpsLink, stravaLink, garminLink, gpxLink]
+    [rideWithGpsLink, stravaLink, garminLink, gpxLink]
       .filter(Boolean)
       .forEach((anchor) => links.appendChild(anchor));
 
