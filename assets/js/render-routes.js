@@ -111,8 +111,6 @@
     mapFrame.className = 'map-frame';
 
     const label = document.createElement('div');
-    label.className = 'map-frame__label';
-    label.textContent = 'Preview';
 
     const iframe = document.createElement('iframe');
     iframe.src = route.embedUrl;
