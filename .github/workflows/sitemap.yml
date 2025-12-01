@@ -2,10 +2,7 @@ name: Generate sitemap.xml
 
 on:
   push:
-    branches: [ main ]
-    # Optional: avoid infinite loops if only sitemap changes
-    paths-ignore:
-      - "sitemap.xml"
+    branches: [ main ]  # change if your default branch is different
 
 jobs:
   sitemap_job:
@@ -15,30 +12,35 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # needed so lastmod = actual last commit date
+          fetch-depth: 0  # needed so lastmod uses real git history
 
       - name: Generate sitemap
         id: sitemap
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: https://georgiagravel.com/
-          # path-to-root: .            # default; change if site is in /docs
-          # drop-html-extension: true  # if you want URLs without .html
-          # date-only: true            # if you only want YYYY-MM-DD in lastmod
+          # If your site HTML is in a folder (e.g. docs/), uncomment:
+          # path-to-root: docs
 
-      # Optional: commit sitemap.xml back to main
-      - name: Commit updated sitemap.xml
-        if: steps.sitemap.outputs.sitemap-path == 'sitemap.xml'
+      - name: Commit updated sitemap
         run: |
+          set -e
+
+          sitemap_path="${{ steps.sitemap.outputs.sitemap-path }}"
+          echo "Sitemap generated at: $sitemap_path"
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add sitemap.xml
-          # no-op if sitemap didn't change
+
+          git add "$sitemap_path"
+
+          # Only commit if there are real changes
           if git diff --cached --quiet; then
-            echo "No changes to sitemap.xml"
+            echo "No changes to $sitemap_path"
             exit 0
           fi
-          git commit -m "Update sitemap.xml [skip ci]"
+
+          git commit -m "Update sitemap [skip ci]"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
