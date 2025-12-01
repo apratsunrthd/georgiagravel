@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://georgiagravel.com/</loc>
-    <lastmod>2025-11-30T10:58:00-05:00</lastmod>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://georgiagravel.com/reviews.html</loc>
-    <lastmod>2025-11-30T10:58:00-05:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-
+<url>
+<loc>https://georgiagravel.com/</loc>
+<lastmod>2025-12-01T12:32:51-05:00</lastmod>
+</url>
+<url>
+<loc>https://georgiagravel.com/reviews.html</loc>
+<lastmod>2025-12-01T11:13:34-05:00</lastmod>
+</url>
+<url>
+<loc>https://georgiagravel.com/routes.html</loc>
+<lastmod>2025-12-01T11:45:40-05:00</lastmod>
+</url>
+<url>
+<loc>https://georgiagravel.com/routes/canal-and-levee-cruise.html</loc>
+<lastmod>2025-12-01T11:13:34-05:00</lastmod>
+</url>
+<url>
+<loc>https://georgiagravel.com/routes/dirty-sheets.html</loc>
+<lastmod>2025-12-01T11:13:34-05:00</lastmod>
+</url>
+<url>
+<loc>https://georgiagravel.com/routes/mulberry-gap-back-40.html</loc>
+<lastmod>2025-12-01T11:13:34-05:00</lastmod>
+</url>
+<url>
+<loc>https://georgiagravel.com/routes/oconee-pine-and-clay.html</loc>
+<lastmod>2025-12-01T11:13:34-05:00</lastmod>
+</url>
 </urlset>
-
