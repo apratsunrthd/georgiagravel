@@ -67,13 +67,26 @@
   <script src="assets/js/routes-table.js"></script>
   <script>
     const allRoutesGrid = document.getElementById('all-routes-grid');
-    if (allRoutesGrid && window.routeComponents && Array.isArray(window.routes)) {
-      const newestFirst = [...window.routes].sort(
-        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-      );
-      newestFirst.forEach((route) => {
-        allRoutesGrid.appendChild(window.routeComponents.createRouteCard(route));
-      });
+
+    if (allRoutesGrid) {
+      const canRenderCards = window.routeComponents && Array.isArray(window.routes);
+
+      if (!canRenderCards) {
+        allRoutesGrid.innerHTML =
+          '<p class="routes-table__lede">Routes are loading. If they do not appear, refresh the page.</p>';
+      } else {
+        const newestFirst = [...window.routes].sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
+        newestFirst.forEach((route) => {
+          allRoutesGrid.appendChild(window.routeComponents.createRouteCard(route));
+        });
+
+        if (!allRoutesGrid.children.length) {
+          allRoutesGrid.innerHTML =
+            '<p class="routes-table__lede">No routes found. Please try again in a moment.</p>';
+        }
+      }
     }
   </script>
 </body>
