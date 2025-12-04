@@ -64,7 +64,7 @@ window.routes = [
     creditHtml: 'Courtesy of <a href="https://ridewithgps.com/users/5568056" target="_blank" rel="noopener">WillyB</a> | <a href="https://augustacanal.com/trails/" target="_blank" rel="noopener">Augusta Canal Trails</a>',
     embedUrl: 'https://ridewithgps.com/embeds?type=route&id=48016836&distanceMarkers=true',
     embedTitle: 'Augusta Canal map'
-  }
+  },
   {
     slug: 'reflection-riding',
     region: 'Chattanooga, TN dipping into NW Georgia',
