@@ -54,8 +54,21 @@
   <script src="assets/js/render-routes.js"></script>
   <script>
     const routeGrid = document.getElementById('route-grid');
-    if (routeGrid && window.routeComponents) {
-      window.routeComponents.renderRecentRoutes(routeGrid, 4);
+
+    if (routeGrid) {
+      const canRenderCards = window.routeComponents && Array.isArray(window.routes);
+
+      if (!canRenderCards) {
+        routeGrid.innerHTML =
+          '<p class="routes-table__lede">Routes are loading. If they do not appear, refresh the page.</p>';
+      } else {
+        window.routeComponents.renderRecentRoutes(routeGrid, 4);
+
+        if (!routeGrid.children.length) {
+          routeGrid.innerHTML =
+            '<p class="routes-table__lede">No routes found. Please try again in a moment.</p>';
+        }
+      }
     }
   </script>
 </body>
