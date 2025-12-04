@@ -65,4 +65,26 @@ window.routes = [
     embedUrl: 'https://ridewithgps.com/embeds?type=route&id=48016836&distanceMarkers=true',
     embedTitle: 'Augusta Canal map'
   }
+  {
+    slug: 'reflection-riding',
+    region: 'Chattanooga, TN dipping into NW Georgia',
+    title: 'Reflection Riding (TN Route)',
+    date: '2025-11-29',
+    difficulty: 'Friendly',
+    summary: 'A short, scenic loop skirting the base of Lookout Mountain with gentle rolling terrain and only a couple of punchy climbs. This route is perfect for new gravel riders or anyone looking for a relaxed spin with big views of Lookout Creek and quiet forest roads. Smooth surfaces and easy navigation make it a great first gravel experience. Bathrooms and parking are available at the Nature Center, and adventurous riders can continue toward Lookout Mountain or connect into longer routes like the Guild Trail.',
+    stats: {
+      distance: '7.5 mi / 12 km',
+      elevation: '398 ft / 121 m',
+      rideTime: '1 hr'
+    },
+    links: {
+      rideWithGps: 'https://ridewithgps.com/routes/34786966',
+      strava: 'https://www.strava.com/routes/3431605971060067486',
+      garmin: 'https://connect.garmin.com/modern/course/420572851',
+      gpx: '/assets/gpx/Reflection_Riding_Arboretum___Nature_Center.gpx'
+    },
+    creditHtml: 'Courtesy of <a href="https://tennesseegravel.com" target="_blank" rel="noopener">Tennessee Gravel</a> | <a href="https://tennesseegravel.com/routes" target="_blank" rel="noopener">Routes</a>',
+    embedUrl: 'https://ridewithgps.com/embeds?type=route&id=34786966&distanceMarkers=true',
+    embedTitle: 'Reflection Riding Gravel Map'
+  }
 ];
