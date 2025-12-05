@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write   # <-- this is the important bit
+  contents: write
 
 jobs:
   sitemap_job:
@@ -15,31 +15,35 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # needed so lastmod uses real git history
+          fetch-depth: 0
 
       - name: Generate sitemap
         id: sitemap
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: https://georgiagravel.com/
-          # path-to-root: docs   # uncomment if your site root is in /docs or similar
 
-      - name: Commit updated sitemap
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Inject Google Analytics
+        env:
+          GA_ID: G-363KYXKP9J   # <-- GA ID for georgiagravel
+        run: node inject-ga.js
+
+      - name: Commit updated sitemap and GA changes
         run: |
           set -e
-
           sitemap_path="${{ steps.sitemap.outputs.sitemap-path }}"
           echo "Sitemap generated at: $sitemap_path"
-
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add "$sitemap_path"
-
+          git add "$sitemap_path" *.html
           if git diff --cached --quiet; then
-            echo "No changes to $sitemap_path"
+            echo "No changes to sitemap or HTML"
             exit 0
           fi
-
-          git commit -m "Update sitemap [skip ci]"
+          git commit -m "Update sitemap and GA [skip ci]"
           git push
