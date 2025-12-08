@@ -86,5 +86,27 @@ window.routes = [
     creditHtml: 'Courtesy of <a href="https://tennesseegravel.com" target="_blank" rel="noopener">Tennessee Gravel</a> | <a href="https://tennesseegravel.com/routes" target="_blank" rel="noopener">Routes</a>',
     embedUrl: 'https://ridewithgps.com/embeds?type=route&id=34786966&distanceMarkers=true',
     embedTitle: 'Reflection Riding Gravel Map'
+  },
+  {
+    slug: 'shakerag-sam-hill-conasauga-loop',
+    region: 'Ellijay, Georgia',
+    title: 'Shakerag, Sam Hill, Conasauga (Loop)',
+    date: '2025-12-06',
+    difficulty: 'Moderate',
+    summary: 'A fun, scenic loop starting near Mulberry Gap with a mix of smooth pavement and fast hardpack. Beginner-friendly and fully rideable on slicks—just keep an eye out for some sizeable potholes. Around mile 5 you may encounter loose dogs; they’ve never bitten anyone but they commit to the chase. A quiet, natural place to stop is Gates Chapel United Methodist Church at the top of a climb —-perfect for a gel break a little past the halfway point. Expect dust in dry conditions but smooth hardpack after rain.',
+    stats: {
+      distance: '12.7 mi / 21 km',
+      elevation: '1,106 ft / 337 m',
+      rideTime: '1-1.25 hr'
+    },
+    links: {
+      rideWithGps: 'https://ridewithgps.com/routes/17711686',
+      strava: 'https://www.strava.com/routes/3433206434679038850',
+      garmin: 'https://connect.garmin.com/modern/course/420822713',
+      gpx: '/assets/gpx/Gravel_Paved_-_Shakerag_Sam_Hill_Conasauga_(Loop).gpx'
+    },
+    creditHtml: 'Courtesy of <a href="https://ridewithgps.com/users/780339" target="_blank" rel="noopener">Mulberry Gap Maps</a> | <a href="https://www.mulberrygap.com/" target="_blank" rel="noopener">mulberrygap.com</a>',
+    embedUrl: 'https://ridewithgps.com/embeds?type=route&id=17711686&distanceMarkers=true',
+    embedTitle: 'Shakerag, Sam Hill, Conasauga (Loop) map'
   }
 ];
