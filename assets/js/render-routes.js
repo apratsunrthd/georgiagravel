@@ -44,6 +44,44 @@
     return list;
   }
 
+  function createExtrasSection(extras) {
+    if (!extras || (!extras.review && !extras.instagram)) return null;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'route-extra-inline';
+
+    const parts = [];
+
+    if (extras.review) {
+      parts.push(`
+        <a href="${extras.review.url}" target="_blank" rel="noopener" class="extra-link">
+          <svg class="extra-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="var(--accent)" d="M4 4h16v2H4zm0 4h16v2H4zm0 4h16v10L12 16 4 22z"/>
+          </svg>
+          Review
+        </a>
+      `);
+    }
+
+    if (extras.instagram) {
+      parts.push(`
+        <a href="${extras.instagram.url}" target="_blank" rel="noopener" class="extra-link">
+          <svg class="extra-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="var(--accent)" d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3.5A5.51 5.51 0 006.5 13 5.51 5.51 0 0012 18.5 5.51 5.51 0 0017.5 13 5.51 5.51 0 0012 7.5zm0 2A3.48 3.48 0 0115.5 13 3.48 3.48 0 0112 16.5 3.48 3.48 0 018.5 13 3.48 3.48 0 0112 9.5zM17.8 6.2a1 1 0 11-2 0 1 1 0 012 0z"/>
+          </svg>
+
+          Video
+        </a>
+      `);
+    }
+
+    wrapper.innerHTML = parts.join('<span class="divider">|</span>');
+    return wrapper;
+  }
+
+
+
+
   function createRouteCard(route) {
     const card = document.createElement('article');
     card.className = 'route-card';
@@ -100,11 +138,16 @@
       .filter(Boolean)
       .forEach((anchor) => links.appendChild(anchor));
 
+    const extrasSection = createExtrasSection(route.extras);
     const credit = document.createElement('p');
     credit.className = 'route-card__credit';
     credit.innerHTML = route.creditHtml;
 
-    text.append(header, summary, stats, links, credit);
+    if (extrasSection) {
+      text.append(header, summary, extrasSection, stats, links, credit);
+    } else {
+      text.append(header, summary, stats, links, credit);
+    }
 
     const mapFrame = document.createElement('div');
     mapFrame.className = 'map-frame';
