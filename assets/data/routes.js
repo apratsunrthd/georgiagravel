@@ -83,6 +83,16 @@ window.routes = [
       garmin: 'https://connect.garmin.com/modern/course/420572851',
       gpx: '/assets/gpx/Reflection_Riding_Arboretum___Nature_Center.gpx'
     },
+    extras: {
+      review: {
+        url: 'https://open.substack.com/pub/tngraveldad/p/route-spotlight-reflection-riding',
+        label: 'Full ride review on Substack'
+      },
+      instagram: {
+        url: 'https://www.instagram.com/reel/DRwlXI9gNLy/',
+        label: 'Ride video on Instagram'
+      }
+    },
     creditHtml: 'Courtesy of <a href="https://tennesseegravel.com" target="_blank" rel="noopener">Tennessee Gravel</a> | <a href="https://tennesseegravel.com/routes" target="_blank" rel="noopener">Routes</a>',
     embedUrl: 'https://ridewithgps.com/embeds?type=route&id=34786966&distanceMarkers=true',
     embedTitle: 'Reflection Riding Gravel Map'
@@ -104,6 +114,16 @@ window.routes = [
       strava: 'https://www.strava.com/routes/3433206434679038850',
       garmin: 'https://connect.garmin.com/modern/course/420822713',
       gpx: '/assets/gpx/Gravel_Paved_-_Shakerag_Sam_Hill_Conasauga_(Loop).gpx'
+    },
+    extras: {
+      review: {
+        url: 'https://open.substack.com/pub/tngraveldad/p/route-spotlight-shakerag-sam-hill',
+        label: 'Full ride review on Substack'
+      },
+      instagram: {
+        url: 'https://www.instagram.com/reel/DSDGB-aAFfn/',
+        label: 'Ride video on Instagram'
+      }
     },
     creditHtml: 'Courtesy of <a href="https://ridewithgps.com/users/780339" target="_blank" rel="noopener">Mulberry Gap Maps</a> | <a href="https://www.mulberrygap.com/" target="_blank" rel="noopener">mulberrygap.com</a>',
     embedUrl: 'https://ridewithgps.com/embeds?type=route&id=17711686&distanceMarkers=true',

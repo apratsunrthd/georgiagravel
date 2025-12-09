@@ -405,6 +405,38 @@ h3 {
   text-decoration: underline;
 }
 
+.extra-icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.route-extra-inline {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.route-extra-inline .extra-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.route-extra-inline .divider {
+  color: var(--muted);
+}
+
+
+
+
 .badge {
   display: inline-flex;
   align-items: center;
