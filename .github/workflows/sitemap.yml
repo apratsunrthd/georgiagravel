@@ -17,16 +17,23 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Generate sitemap
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generate sitemap (file-based)
         id: sitemap
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: https://georgiagravel.com/
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
+      - name: Add JS route URLs to sitemap
+        env:
+          BASE_URL: https://georgiagravel.com/
+          ROUTE_PAGE: route.html
+          SITEMAP_PATH: ${{ steps.sitemap.outputs.sitemap-path }}
+        run: node scripts/augment-sitemap-with-routes.js
 
       - name: Inject Google Analytics
         env:
@@ -38,12 +45,16 @@ jobs:
           set -e
           sitemap_path="${{ steps.sitemap.outputs.sitemap-path }}"
           echo "Sitemap generated at: $sitemap_path"
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "$sitemap_path" *.html
+
+          git add "$sitemap_path" *.html scripts/augment-sitemap-with-routes.js
+
           if git diff --cached --quiet; then
             echo "No changes to sitemap or HTML"
             exit 0
           fi
+
           git commit -m "Update sitemap and GA [skip ci]"
           git push
