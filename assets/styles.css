@@ -670,6 +670,44 @@ h3 {
   border-color: var(--border);
 }
 
+/* --- Reviews: title row + action buttons --- */
+.review-card__title {
+  flex-wrap: wrap;              /* allows clean stacking */
+  align-items: center;
+}
+
+.review-card__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* --- Pills: stop weird wrapping + better vertical rhythm --- */
+.pill-link {
+  white-space: nowrap;
+  line-height: 1.1;
+  padding: 10px 16px;
+}
+
+/* --- Kill "visited purple" everywhere for pill links --- */
+.pill-link:link,
+.pill-link:visited {
+  color: var(--text);
+}
+
+/* Ghost pill should explicitly stay the same color */
+.pill-link--ghost:link,
+.pill-link--ghost:visited {
+  color: var(--text);
+}
+
+/* Optional: slightly tighter ghost padding so it reads less chunky */
+.pill-link--ghost {
+  padding: 10px 14px;
+  font-weight: 600;
+}
+
+
 .review-card__body {
   display: flex;
   flex-direction: column;
