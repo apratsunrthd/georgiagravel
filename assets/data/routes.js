@@ -128,5 +128,37 @@ window.routes = [
     creditHtml: 'Courtesy of <a href="https://ridewithgps.com/users/780339" target="_blank" rel="noopener">Mulberry Gap Maps</a> | <a href="https://www.mulberrygap.com/" target="_blank" rel="noopener">mulberrygap.com</a>',
     embedUrl: 'https://ridewithgps.com/embeds?type=route&id=17711686&distanceMarkers=true',
     embedTitle: 'Shakerag, Sam Hill, Conasauga (Loop) map'
+  },
+  {
+    slug: 'guild-trail',
+    region: 'Chattanooga, TN dipping into NW Georgia',
+    title: 'Guild Trail (TN Route)',
+    date: '2025-12-13',
+    difficulty: 'Friendly',   
+    summary: 'A scenic out-and-back climb on Lookout Mountain following the Tennessee River Basin Scenic Bikeways version of Guild Trail. This route avoids road riding except at the Scenic Highway crossing at Ruby Falls. Gravel double-track from the start with more chunk and roots on Upper Truck Trail. Riders pass under the Incline Railway twice, cross wooden bridges, and climb steadily past Ruby Falls before continuing higher toward Craven’s House. Upper Truck Trail adds short, punchy, and occasionally chunky sections, while a clearly marked Black Diamond trail indicates a natural turnaround point for most gravel bikes. The descent is fast and relatively smooth, making this a rewarding and accessible mountain climb. Expect hikers and runners on popular days. Best ridden in dry conditions as leaf cover can get slippery.',
+    stats: {
+      distance: '17.1 mi / 27.5 km',
+      elevation: '1,470 ft / 448 m',
+      rideTime: '2 hr'
+    },
+    links: {
+      rideWithGps: 'https://ridewithgps.com/routes/31608194',
+      strava: 'https://www.strava.com/routes/3435994623628487562',
+      garmin: 'https://connect.garmin.com/modern/course/384881136',
+      gpx: '/assets/gpx/TN_RIVER_BASIN_SCENIC_BIKEWAYS__Guild_Trail.gpx'
+    },
+    extras: {
+      review: {
+        url: 'https://open.substack.com/pub/tngraveldad/p/guild-trail-the-most-accessible-gravel?r=6y5zvm&utm_campaign=post&utm_medium=web',
+        label: 'Full Guild Trail ride review on Substack'
+      },
+      instagram: {
+        url: 'https://www.instagram.com/reel/DSU8oDsACM1/',
+        label: 'Guikld Trail ride video on Instagram'
+      }
+    },
+    creditHtml: 'Courtesy of <a href="https://www.tennesseegravel.com" target="_blank" rel="noopener">Tennessee Gravel</a>',
+    embedUrl: 'https://ridewithgps.com/embeds?type=route&id=31608194&distanceMarkers=true',
+    embedTitle: 'Guild Trail'
   }
 ];
